@@ -122,3 +122,48 @@ buggatiChiron.haveWing = false;
 delete buggatiChiron.haveWing;
 // console.log("haveWing" in buggatiChiron);
 
+
+
+/* 
+INHERITANCE
+- 'prototype' is a property that is shared (inherited) by all objects.
+- a method is a property of an object that is a function.
+    Methods are typically defined on the prototype object of the constructor, 
+    so that all objects of the same type share the same method.
+*/
+// showProps(buggatiChiron, "buggatiChiron");
+// adding a property 'color' to all object of type 'Car'
+Car.prototype.color = "red";
+// console.log("color" in buggatiChiron && "color" in teslaPlaidS);
+// define a function that formats and displays the properties of the previously-defined Car objects.
+Car.prototype.displayCar = function () {
+    const result = `A beautiful ${this.year} ${this.make} ${this.model} owned by ${this.owner.name}`
+    console.log(result);
+}
+// buggatiChiron.displayCar(); // -> A beautiful 2019 Buggati Chiron Sport owned by ananta
+// teslaPlaidS.displayCar(); // -> A beautiful 2015 Tesla S Plaid owned by artur
+
+
+
+
+/* 
+GETTERS AND SETTERS
+- getter is a function associated with a property that gets the value of a specific property.
+- setter is a function associated with a property that sets the value of a specific property.
+*/
+// using object initializer 
+const myObj = {
+    a: 7,
+    get b() {
+        return this.a + 1;
+    },
+    set c(x) {
+        this.a = x / 2;
+    },
+};
+
+console.log(myObj.a); // 7
+console.log(myObj.b); // 8, returned from the get b() method
+myObj.c = 50; // Calls the set c(x) method
+console.log(myObj.a); // 25
+  
