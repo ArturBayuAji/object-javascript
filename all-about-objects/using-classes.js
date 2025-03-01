@@ -24,18 +24,20 @@ class Person {
 
 
 class BankAccount {
-    // public incstance fields/properies (accessible anywhere)
+    // incstance fields/properies 
+    // public (accessible anywhere)
     accountNumber;
 
-    // private instance fields/properties (only accessible within the class)
+    // private (only accessible within the class)
     #balance;
     #transactions = [];
 
-    // static fields/properties (accessible anywhere, owned by the class -> shared accross all instance)
+    // static fields/properties 
+    // public (accessible anywhere, owned by the class -> shared accross all instance)
     static bankName = "National Bank";
     static bankLocations = ["Bali", "Jakarta"];
 
-    // private static fields/properties ('private' -> only accessible within the class, 'static' -> owned by the class -> shared accross all instance)
+    // private static ('private' -> only accessible within the class, 'static' -> owned by the class -> shared accross all instance)
     static #totalAccountsMade = 0;
     static #assetsUnderManagement = 0;
     
@@ -47,7 +49,8 @@ class BankAccount {
         BankAccount.#assetsUnderManagement += initialBalance;
     }
 
-    // public instance method
+    // instance method
+    // public (accessible anywhere)
     deposit (amount) {
         if (amount > 0) {
             this.#balance += amount;
@@ -67,6 +70,12 @@ class BankAccount {
         }
     }
 
+    // static method
+    // public (accessible anywhere, owned by the class -> shared accross all instance)
+    static getBankInfo() {
+        return `Welcome to ${this.bankName}. Total accounts: ${this.#totalAccountsMade}. AUM: $${this.#assetsUnderManagement}`;
+    }
+
     // Getter for balance (read-only)
     get balance() {
         return this.#balance;
@@ -75,11 +84,6 @@ class BankAccount {
     // Getter for transactions (read-only)
     get transactions() {
         return [...this.#transactions]; // Return a copy to protect internal data
-    }
-
-    // Static method: Retrieve bank details
-    static getBankInfo() {
-        return `Welcome to ${this.bankName}. Total accounts: ${this.#totalAccountsMade}. AUM: $${this.#assetsUnderManagement}`;
     }
 
     // Static initialization block
@@ -96,3 +100,13 @@ class BankAccount {
 // ============= Program start here ==============
 const artur = new Person("Artur Bayu", 22, "Male", "Indonesia");
 const nanta = new Person("Ananta", 19, "Male", "Indonesia");
+console.log(BankAccount.getBankInfo());
+const account1 = new BankAccount(1, 100.5);
+const account2 = new BankAccount(2, 200.35);
+console.log(account1.balance);
+account1.deposit(230);
+console.log(account1.balance);
+console.log(BankAccount.getBankInfo());
+console.log(account1.transactions);
+console.log(BankAccount.bankName);
+console.log(account1.toString());
