@@ -96,11 +96,3 @@ function validatePhoneNum(phoneNum) {
         return null;
     }
 }
-
-let userPhoneNum = "+123 456789012"
-let userPhoneNum1 = "+ 123 4 5 67 89 0 1 2"
-
-console.log(validatePhoneNum(userPhoneNum));
-// -> +123456789012
-console.log(validatePhoneNum(userPhoneNum1));
-// -> +123456789012
