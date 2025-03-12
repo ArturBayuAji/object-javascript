@@ -1,0 +1,15 @@
+{
+  "name": "learn-modules",
+  "version": "1.0.0",
+  "description": "dummy project to learn javascript modules",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artur Bayu",
+  "license": "ISC",
+  "dependencies": {
+    "ini": "^5.0.0"
+  }
+}
