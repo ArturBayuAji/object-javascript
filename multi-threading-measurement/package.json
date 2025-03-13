@@ -1,0 +1,12 @@
+{
+  "name": "multi-threading-measurement",
+  "version": "1.0.0",
+  "description": "dummy program just to implement Multi Thread Programming and its measurement.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artur Bayu",
+  "license": "ISC"
+}
