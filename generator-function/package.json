@@ -1,0 +1,12 @@
+{
+  "name": "generator-function",
+  "version": "1.0.0",
+  "description": "dummy project to learn Generator Function",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
